@@ -61,9 +61,9 @@
 
     function generateProblem() {
       let z = Math.floor(Math.random() * 19 + 2); // 2〜20
-      let n = Math.floor(Math.random() * 10 + 2); // 2〜11
+      let n = Math.floor(Math.random() * 11 + 2); // 2〜11
       let x = z * n;
-      let y = Math.floor(Math.random() * 20 + 2); // 2〜21
+      let y = Math.floor(Math.random() * 30 + 2); // 2〜21
       currentAnswer = (x * y) / z;
 
       document.getElementById("problem").innerText = `${x} × ${y} ÷ ${z}`;
