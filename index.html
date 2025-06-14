@@ -76,6 +76,15 @@
       height: 20px;
       margin: 0 2px;
     }
+    #celebration {
+      position: absolute;
+      top: 100px;
+      left: -200px;
+      transition: left 4s ease-in-out;
+    }
+    #celebration.show {
+      left: 100vw;
+    }
   </style>
 </head>
 <body>
@@ -89,6 +98,7 @@
   <button id="nextBtn" disabled>次へ</button>
   <div id="streak"></div>
   <div id="gauge"></div>
+  <img id="celebration" src="sugoi3.png" alt="すごい！" width="150" height="150" />
 
   <script>
     let currentAnswer = null;
@@ -159,6 +169,12 @@
         submitBtn.disabled = true;
         userAnswer.disabled = true;
         buttonsDiv.innerHTML = '';
+        if (correctStreak === 10) {
+        celebration.classList.add('show');
+        setTimeout(() => {
+            celebration.classList.remove('show');
+          }, 4000);
+        }
       } else {
         resultDiv.innerText = "不正解... もう一度チャレンジしてみよう！";
         correctStreak = 0;
